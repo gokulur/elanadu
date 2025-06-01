@@ -40,25 +40,25 @@ INSTALLED_APPS = [
     'core',
     'shop',
     'rest_framework',
-    'corsheaders',
+    # 'corsheaders',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
+    # 'corsheaders.middleware.CorsMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ALLOWED_ORIGINS = [
-"http://localhost:5173",
-"http://localhost:5174",
-"http://localhost:5175",
-]
+# CORS_ALLOWED_ORIGINS = [
+# "http://localhost:5173",
+# "http://localhost:5174",
+# "http://localhost:5175",
+# ]
 
 ROOT_URLCONF = 'elanaduProject.urls'
 
