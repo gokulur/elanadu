@@ -5,6 +5,9 @@ from .serializers import ProductSerializer
 from rest_framework.response import Response
 # Create your views here.
 
+def Home(request):
+    return render(request, "home.html")
+ 
 @api_view(['GET'])
 def shops(request):
     products = Product.objects.all()
