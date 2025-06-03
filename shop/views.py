@@ -17,3 +17,5 @@ def shops(request):
     serializer= ProductSerializer(products,many=True)
     return Response(serializer.data)
 
+ 
+
