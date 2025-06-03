@@ -1,6 +1,6 @@
  
 
-<form method="POST" action="{% url 'reset_password_form' %}">
+<form method="POST" action="{% url 'user_register' %}">
     {% csrf_token %}
     <input type="text" name="username" placeholder="Username" required><br>
     <input type="email" name="email" placeholder="Email"><br>
@@ -10,6 +10,8 @@
   
     <button type="submit">Register</button>
 </form>
+
+<a href="{% url 'login_page' %}">Login</a>
 
 
 

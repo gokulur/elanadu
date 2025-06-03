@@ -41,7 +41,7 @@ def change_password_page(request):
 
 
 def send_verification_email(to_email, otp):
-    subject = "HairCutHub Email Verification Code"
+    subject = "Elanadu Email Verification Code"
     message = f"Your OTP code is: {otp}\nThis code is valid for 10 minutes."
     from_email = settings.EMAIL_HOST_USER
     recipient_list = [to_email]
@@ -62,7 +62,7 @@ def user_register(request):
         password = request.POST.get('password')
         confirm_password = request.POST.get('confirm_password')
 
-        # Validation checks
+ 
         if password != confirm_password:
             messages.error(request, "Passwords do not match.")
             return redirect('registration_page')
@@ -209,7 +209,7 @@ def user_login(request):
         if user is not None:
             login(request, user)
             messages.success(request, "Logged in successfully.")
-            return redirect('barbershoppage')   
+            return redirect('ProductsView')   
         else:
             messages.error(request, "Invalid phone number or password.")
             return redirect('login_page')
