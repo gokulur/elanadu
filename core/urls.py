@@ -18,6 +18,11 @@ urlpatterns = [
     path('change_password_page/', views.change_password_page, name='change_password_page'),
     path('reset_password_form/', views.reset_password_form, name='reset_password_form'),
     path('reset_password_form/', views.reset_password_form, name='reset_password_form'),
+
+    path('user_cart_page/', views.user_cart_page, name='user_cart_page'),
+    path('user_cart/', views.user_cart, name='user_cart'),
+    # path('user_order/', views.user_order, name='user_order'),
+    # path('user_order_page/', views.user_order_page, name='user_order_page'),
  
 
 ]
