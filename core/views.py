@@ -5,7 +5,8 @@ from django.contrib.auth.hashers import make_password
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 from django.contrib.auth import authenticate, login, logout
-from .models import OTP
+from .models import OTP,Cart,Order
+from shop.models import Product 
 CustomUser = get_user_model()
 import random
 import requests
@@ -313,3 +314,22 @@ def user_logout(request):
     logout(request)
     messages.success(request, "You have been logged out.")
     return redirect('login_page')
+
+
+@login_required
+def user_profile(request):
+    user = request.user
+    return render(request, 'users/profile.html', {'user': user})
+
+ 
+@login_required
+def user_cart(request):
+    user = request.user
+    cart=Cart.objects.get(user=user)
+    if request.method == 'POST':
+        product_id = request.POST.get('product_id')
+        product = Product.objects.get(id=product_id)
+        Cart.objects.create(cart=cart)
+
+        messages.success(request, "Product added to cart.")
+        return redirect('user_cart')
