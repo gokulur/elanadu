@@ -18,7 +18,7 @@ from django.core.mail import send_mail
 
 def registration_page(request):
     return render (request,'registration.html')
-
+@login_required
 def user_update_page(request):
     return render (request,'user_update.html')
 
@@ -38,8 +38,38 @@ def verify_reset_page(request):
 def change_password_page(request):
     return render (request,'changepassword.html')
 
+<<<<<<< HEAD
 def user_cart_page(request):
     return render (request,'usercart.html')
+=======
+def user_profile_page(request):
+ 
+    return render (request,'userprofile.html' )
+def user_profile_page(request):
+ 
+    return render (request,'userprofile.html' )
+
+
+ 
+
+@login_required
+def user_cart_page(request):
+    user = request.user
+    cart_items = Cart.objects.filter(user=user)  
+    context = {
+        'cart_items': cart_items,
+    }
+    return render (request,'usercart.html',context)
+
+@login_required
+def order_page(request):
+    user = request.user
+    orders = Order.objects.filter(user=user)  
+    context = {
+        'orders': orders,
+    }
+    return render(request, 'order_page.html', context)
+>>>>>>> b2ee892 (ui issues solved)
 
 
 
@@ -178,9 +208,8 @@ def update_profile(request):
             user.profile_image = profile_image
         user.save()
         messages.success(request, "Profile updated successfully.")
-        return redirect('update_profile')
+        return redirect('user_profile')
 
-    return render(request, 'users/update_profile.html', {'user': user})
 
 
 
@@ -344,4 +373,15 @@ def user_order(request):
         total_amount = product.price
         Order.objects.create(product=product, user=user, total_amount=total_amount)
         messages.success(request, "Order placed successfully.")
+<<<<<<< HEAD
         return redirect('user_order')                            
+=======
+        return redirect('ProductsView')    
+
+@login_required
+def delete_account(request):
+    user = request.user
+    if request.method == 'POST':
+        user.delete()
+        return redirect('Home')
+>>>>>>> b2ee892 (ui issues solved)

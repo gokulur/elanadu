@@ -2523,10 +2523,10 @@
     }
 
     .footer {
-        color: var(--default-color);
-        background-color: var(--background-color);
-        background: url("https://images.pexels.com/photos/18787255/pexels-photo-18787255/free-photo-of-moo.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2") top center no-repeat;
-        background-size: cover;
+        /* color: var(--default-color);
+        background-color: var(--background-color); */
+        /* background: url("https://images.pexels.com/photos/18787255/pexels-photo-18787255/free-photo-of-moo.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2") top center no-repeat;
+        background-size: cover; */
         position: relative;
         font-size: 14px;
     }
@@ -2633,9 +2633,9 @@
                 <ul>
                     <li><a href=" " class="active">Home</a></li>
                     <li><a href="#about">About</a></li>
-                     <li><a href="">Products</a></li>
+                    <li><a href="#team">Products</a></li>
                     <li><a href="{% url 'registration_page' %}">Register</a></li>
-                   <li><a href="{% url 'login_page' %}">Login</a></li>
+                    <li><a href="{% url 'login_page' %}">Login</a></li>
                     <li><a href="">Contact</a></li>
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -2692,7 +2692,7 @@
 
         </section>
 
-        <div class="page-title dark-background" style="background-image: url({% static 'images/second-top.jpg' %});">
+        <!-- <div class="page-title dark-background" style="background-image: url({% static 'images/second-top.jpg' %});">
             <div class="container position-relative">
                 <h1>Welcome To Our Farm!</h1>
                 <nav class="breadcrumbs">
@@ -2701,7 +2701,7 @@
                         at our <br> farm by our farmers and cows. Welcome to Elanadu!</p>
                 </nav>
             </div>
-        </div>
+        </div> -->
 
 
         <div class="container mt-5 mb-5">
@@ -2799,7 +2799,7 @@
         </section>
         <!-- <div class="page-title dark-background" style="background-image: url({% static 'images/pexels-byron-302693-877234.jpg' %});"> -->
         <div class="mt-5 page-title dark-background"
-            style="background-image: url(https://images.pexels.com/photos/325257/pexels-photo-325257.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);">
+            style="background-image: url(https://images.pexels.com/photos/753868/pexels-photo-753868.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);">
             <div class="container position-relative">
                 <h1>Milking Land of Milk & More</h1>
                 <nav class="breadcrumbs">
@@ -2812,7 +2812,50 @@
                 </nav>
             </div>
         </div>
+        <section id="projects" style="background-color: color-mix(in srgb, var(--default-color), transparent 96%);">
+            <div class="projects container-main  ">
 
+                <div class="all-projects pt-5">
+                    <div></div>
+
+                    <div class="project-item">
+                        <div class="project-info">
+                            <h1>Natural & Organic Products</h1>
+
+                            <p class="text-black">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam reiciendis obcaecati,
+                                placeat qui suscipit ut, aliquam nulla, ea eius laudantium fugit minus vero id!
+                                Voluptatem, culpa libero. Reiciendis, cupiditate minus. Dignissimos dolore aspernatur
+                                laborum beatae ducimus laboriosam, facilis nobis maxime quisquam possimus, soluta
+                                expedita assumenda!
+                            </p>
+                        </div>
+                        <div class="project-img">
+                            <img src="https://images.pexels.com/photos/4919739/pexels-photo-4919739.jpeg?auto=compress&cs=tinysrgb&w=600"
+                                alt="olx">
+                        </div>
+                    </div>
+                    <div class="project-item">
+                        <div class="project-info">
+                            <h1>Featured Recipe</h1>
+                            <p class="text-black">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam reiciendis obcaecati,
+                                placeat qui suscipit ut, aliquam nulla, ea eius laudantium fugit minus vero id!
+                                Voluptatem, culpa libero. Reiciendis, cupiditate minus. Dignissimos dolore aspernatur
+                                laborum beatae ducimus laboriosam, facilis nobis maxime quisquam possimus, soluta
+                                expedita assumenda!
+                            </p>
+                        </div>
+                        <div class="project-img">
+                            <img src="https://images.pexels.com/photos/4870544/pexels-photo-4870544.jpeg?auto=compress&cs=tinysrgb&w=600"
+                                alt="E-Commerce Platform">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
         <section id="team" class="team section">
 
 
@@ -2892,163 +2935,66 @@
                 <a href="#get-started" class="btn-offer">VIEW ALL PRODUCTS</a>
             </div>
 
-
-        </section>
-
-        <section id="projects" style="background-color: color-mix(in srgb, var(--default-color), transparent 96%);">
-            <div class="projects container-main mt-5">
-
-                <div class="all-projects">
-                    <div></div>
-
-                    <div class="project-item">
-                        <div class="project-info">
-                            <h1>Natural & Organic Products</h1>
-
-                            <p class="text-black">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam reiciendis obcaecati,
-                                placeat qui suscipit ut, aliquam nulla, ea eius laudantium fugit minus vero id!
-                                Voluptatem, culpa libero. Reiciendis, cupiditate minus. Dignissimos dolore aspernatur
-                                laborum beatae ducimus laboriosam, facilis nobis maxime quisquam possimus, soluta
-                                expedita assumenda!
-                            </p>
-                        </div>
-                        <div class="project-img">
-                            <img src="https://images.pexels.com/photos/4919739/pexels-photo-4919739.jpeg?auto=compress&cs=tinysrgb&w=600"
-                                alt="olx">
-                        </div>
-                    </div>
-                    <div class="project-item">
-                        <div class="project-info">
-                            <h1>Featured Recipe</h1>
-                            <p class="text-black">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam reiciendis obcaecati,
-                                placeat qui suscipit ut, aliquam nulla, ea eius laudantium fugit minus vero id!
-                                Voluptatem, culpa libero. Reiciendis, cupiditate minus. Dignissimos dolore aspernatur
-                                laborum beatae ducimus laboriosam, facilis nobis maxime quisquam possimus, soluta
-                                expedita assumenda!
-                            </p>
-                        </div>
-                        <div class="project-img">
-                            <img src="https://images.pexels.com/photos/4870544/pexels-photo-4870544.jpeg?auto=compress&cs=tinysrgb&w=600"
-                                alt="E-Commerce Platform">
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
+<br><br><br>
         </section>
 
 
-        <section id="team" class="team section">
 
 
-            <div class="container section-title pt-5" data-aos="fade-up">
-                <h2 class="text-center">Our Shop</h2>
-                <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem animi ea odio
-                    amet harum dignissimos incidunt, nam totam quae voluptas porro voluptate repellendus ipsum ut
-                    assumenda aliquam non iure molestias commodi nisi illo architecto. Aspernatur.</p>
-            </div>
+        <section class="py-5" style="background-color: #f8f9fa;">
+            <div class="container">
+                <div class="row g-4 justify-content-start">
 
-            <div class="container py-5">
-                <div class="row gy-4">
+                    {% for i in products %}
+                    <div class="col-lg-2 col-md-3 col-sm-6">
+                        <div class="card h-100 border-0 shadow-sm  overflow-hidden transition" style="height: 360px;">
+                            <img class="p-4" src="{{ i.image.url }}" loading="lazy" class="card-img-top"
+                                alt="Natural Cow Ghee 500ml" style="height: 150px; object-fit: cover;">
+                            <div class="card-body px-3 py-2 d-flex flex-column justify-content-between"
+                                style="height: 150px;">
+                                <div>
+                                    <h6 class="card-title fw-semibold mb-1 text-truncate"><a
+                                            href="{% url 'product_detail' i.slug %}">{{ i.name }}</a></h6>
+                                    <p class="small text-muted mb-1">{{ i.description }}</p>
+                                    </p>
+                                    <div class="text-warning small mb-1">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star"></i>
+                                        <span class="text-muted ms-1">(123)</span>
+                                    </div>
+                                    <p class="fw-bold mb-0 text-success">₹{{ i.price }}</p>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between px-3 pb-3">
+                                <form method="POST" action="{% url 'user_order' %}" class="w-50 ms-1">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="product_id" value="{{ i.id }}">
+                                    <button type="submit" class="btn btn-sm btn-outline-success rounded-pill w-100">
+                                        Buy
+                                    </button>
+                                </form>
 
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="card shadow-sm h-100">
-                            <img src="https://pravarshaindustries.com/storage/products/6PDp0ncKeSEepO3e0nsSRlJgIAs1J63uthp5RPkt.webp"
-                                class="card-img-top" alt="Product Image" style="height: 200px; object-fit: cover;">
-                            <div class="card-body text-start">
-                                <h5 class="card-title mb-1">Product Title</h5>
-                                <p class="card-text mb-2">
-                                    <i class="bi bi-star-fill text-warning"></i>
-                                    <i class="bi bi-star-fill text-warning"></i>
-                                    <i class="bi bi-star-fill text-warning"></i>
-                                    <i class="bi bi-star-fill text-warning"></i>
-                                    <i class="bi bi-star text-warning"></i>
-                                    <span class="text-muted small ms-1">(123)</span>
-                                </p>
-                            </div>
-                            <div class="d-flex justify-content-around mb-3 px-3">
-                                <a href="#" class="btn btn-success text-light w-100 me-2">Buy</a>
-                                <a href="#" class="btn btn-outline-success w-100 ms-2">Cart</a>
+                                <form method="POST" action="{% url 'user_cart' %}" class="w-50 ms-1">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="product_id" value="{{ i.id }}">
+                                    <button type="submit" class="btn btn-sm btn-outline-danger rounded-pill w-100">
+                                        Cart
+                                    </button>
+                                </form>
+
                             </div>
                         </div>
+
                     </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="card shadow-sm h-100">
-                            <img src="https://pravarshaindustries.com/storage/products/6PDp0ncKeSEepO3e0nsSRlJgIAs1J63uthp5RPkt.webp"
-                                class="card-img-top" alt="Product Image" style="height: 200px; object-fit: cover;">
-                            <div class="card-body text-start">
-                                <h5 class="card-title mb-1">Product Title</h5>
-                                <p class="card-text mb-2">
-                                    <i class="bi bi-star-fill text-warning"></i>
-                                    <i class="bi bi-star-fill text-warning"></i>
-                                    <i class="bi bi-star-fill text-warning"></i>
-                                    <i class="bi bi-star-fill text-warning"></i>
-                                    <i class="bi bi-star text-warning"></i>
-                                    <span class="text-muted small ms-1">(123)</span>
-                                </p>
-                            </div>
-                            <div class="d-flex justify-content-around mb-3 px-3">
-                                <a href="#" class="btn btn-success text-light w-100 me-2">Buy</a>
-                                <a href="#" class="btn btn-outline-success w-100 ms-2">Cart</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="card shadow-sm h-100">
-                            <img src="https://pravarshaindustries.com/storage/products/6PDp0ncKeSEepO3e0nsSRlJgIAs1J63uthp5RPkt.webp"
-                                class="card-img-top" alt="Product Image" style="height: 200px; object-fit: cover;">
-                            <div class="card-body text-start">
-                                <h5 class="card-title mb-1">Product Title</h5>
-                                <p class="card-text mb-2">
-                                    <i class="bi bi-star-fill text-warning"></i>
-                                    <i class="bi bi-star-fill text-warning"></i>
-                                    <i class="bi bi-star-fill text-warning"></i>
-                                    <i class="bi bi-star-fill text-warning"></i>
-                                    <i class="bi bi-star text-warning"></i>
-                                    <span class="text-muted small ms-1">(123)</span>
-                                </p>
-                            </div>
-                            <div class="d-flex justify-content-around mb-3 px-3">
-                                <a href="#" class="btn btn-success text-light w-100 me-2">Buy</a>
-                                <a href="#" class="btn btn-outline-success w-100 ms-2">Cart</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="card shadow-sm h-100">
-                            <img src="https://pravarshaindustries.com/storage/products/6PDp0ncKeSEepO3e0nsSRlJgIAs1J63uthp5RPkt.webp"
-                                class="card-img-top" alt="Product Image" style="height: 200px; object-fit: cover;">
-                            <div class="card-body text-start">
-                                <h5 class="card-title mb-1">Product Title</h5>
-                                <p class="card-text mb-2">
-                                    <i class="bi bi-star-fill text-warning"></i>
-                                    <i class="bi bi-star-fill text-warning"></i>
-                                    <i class="bi bi-star-fill text-warning"></i>
-                                    <i class="bi bi-star-fill text-warning"></i>
-                                    <i class="bi bi-star text-warning"></i>
-                                    <span class="text-muted small ms-1">(123)</span>
-                                </p>
-                            </div>
-                            <div class="d-flex justify-content-around mb-3 px-3">
-                                <a href="#" class="btn btn-success text-light w-100 me-2">Buy</a>
-                                <a href="#" class="btn btn-outline-success w-100 ms-2">Cart</a>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
-
-            <div class="text-center mt-2">
-                <a href="#get-started" class="btn-offer">VIEW ALL PRODUCTS</a>
-            </div>
-
-
         </section>
     </main>
-    <footer id="footer" class="footer dark-background mt-5">
+    <footer id="footer" class="footer   mt-5">
         <div class="container footer-top">
             <div class="row gy-4">
                 <div class="col-lg-3 col-md-6 footer-about">
@@ -3064,7 +3010,7 @@
                         <p><strong>Email:</strong> <span>elanadu@elanadu.com</span></p>
                         <p><strong>Alt Email:</strong> <span>elanadu@elanadumilk.com</span></p>
                     </div>
-                     
+
                 </div>
 
                 <div class="col-lg-3 col-md-3 footer-links">
@@ -3074,7 +3020,7 @@
                         <li><a href="#">About Us</a></li>
                         <li><a href="#">Our History</a></li>
                         <li><a href="#">Products</a></li>
-                     
+
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-3 footer-links">
@@ -3084,7 +3030,7 @@
                         <li><a href="#">About Us</a></li>
                         <li><a href="#">Our History</a></li>
                         <li><a href="#">Products</a></li>
-                     
+
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-3 footer-links">
@@ -3093,7 +3039,7 @@
                         <li><a href="#">Home</a></li>
                         <li><a href="#">About Us</a></li>
                         <li><a href="#">Our History</a></li>
-                
+
                     </ul>
                 </div>
             </div>
