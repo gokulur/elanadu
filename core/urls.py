@@ -23,14 +23,10 @@ urlpatterns = [
     path('user_cart/', views.user_cart, name='user_cart'),
     # path('user_order/', views.user_order, name='user_order'),
     # path('user_order_page/', views.user_order_page, name='user_order_page'),
-<<<<<<< HEAD
- 
-
-=======
     path('order/', views.order_page, name='order_page'),
     path('profile/', views.user_profile_page, name='user_profile'),
     path('delete_account/', views.delete_account, name='delete_account'),
     path('update_profile/', views.update_profile, name='update_profile'),
    
->>>>>>> b2ee892 (ui issues solved)
+ 
 ]

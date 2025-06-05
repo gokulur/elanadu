@@ -38,10 +38,10 @@ def verify_reset_page(request):
 def change_password_page(request):
     return render (request,'changepassword.html')
 
-<<<<<<< HEAD
+ 
 def user_cart_page(request):
     return render (request,'usercart.html')
-=======
+ 
 def user_profile_page(request):
  
     return render (request,'userprofile.html' )
@@ -69,7 +69,7 @@ def order_page(request):
         'orders': orders,
     }
     return render(request, 'order_page.html', context)
->>>>>>> b2ee892 (ui issues solved)
+ 
 
 
 
@@ -373,10 +373,10 @@ def user_order(request):
         total_amount = product.price
         Order.objects.create(product=product, user=user, total_amount=total_amount)
         messages.success(request, "Order placed successfully.")
-<<<<<<< HEAD
+ 
         return redirect('user_order')                            
-=======
-        return redirect('ProductsView')    
+ 
+ 
 
 @login_required
 def delete_account(request):
@@ -384,4 +384,4 @@ def delete_account(request):
     if request.method == 'POST':
         user.delete()
         return redirect('Home')
->>>>>>> b2ee892 (ui issues solved)
+ 
