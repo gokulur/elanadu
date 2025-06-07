@@ -1,9 +1,0 @@
-<form method="POST" action="{% url 'forgot_password_request' %}">
-    {% csrf_token %}
-    <input type="text" name="email" placeholder="email" required><br>
-    <button type="submit">Forgot</button>
-</form>
-
-{% for message in messages %}
-    <p>{{ message }}</p>
-{% endfor %}

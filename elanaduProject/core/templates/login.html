@@ -1,0 +1,945 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Elanadu</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="icon" type="image/png" href="{% static 'images/image.png' %}">
+
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --default-font: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            --heading-font: "Roboto", sans-serif;
+            --nav-font: "Poppins", sans-serif;
+        }
+
+
+        :root {
+            --background-color: #ffffff;
+
+            --default-color: #364d59;
+
+            --heading-color: #52565e;
+
+            --accent-color: #feb900;
+
+            --surface-color: #ffffff;
+
+            --contrast-color: #ffffff;
+
+        }
+
+
+        :root {
+            --nav-color: rgba(255, 255, 255, 0.55);
+
+            --nav-hover-color: #ffffff;
+
+            --nav-mobile-background-color: #ffffff;
+
+            --nav-dropdown-background-color: #ffffff;
+
+            --nav-dropdown-color: #212529;
+
+            --nav-dropdown-hover-color: #feb900;
+
+        }
+
+
+
+        .light-background {
+            --background-color: #f4f7f6;
+            --surface-color: #ffffff;
+        }
+
+        .dark-background {
+            --background-color: #060606;
+            --default-color: #ffffff;
+            --heading-color: #ffffff;
+            --surface-color: #252525;
+            --contrast-color: #ffffff;
+        }
+
+        /* Smooth scroll */
+        :root {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: var(--default-color);
+            background-color: var(--background-color);
+            font-family: var(--default-font);
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        a:hover {
+            color: color-mix(in srgb, var(--accent-color), transparent 25%);
+            text-decoration: none;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: var(--heading-color);
+            font-family: var(--heading-font);
+        }
+
+
+        .header {
+            --background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
+            --heading-color: #3c3c3c;
+            --nav-color: #3c3c3c;
+            --nav-hover-color: #3c3c3c;
+            color: var(--default-color);
+            background-color: var(--background-color);
+            padding: 20px 0;
+            transition: all 0.5s;
+            z-index: 997;
+        }
+
+        .header .logo img {
+            max-height: 32px;
+            margin-right: 8px;
+        }
+
+        .header .logo h1 {
+            font-size: 24px;
+            margin: 0;
+            font-weight: 700;
+            color: var(--heading-color);
+        }
+
+        .header .logo span {
+            font-size: 24px;
+            padding-left: 1px;
+            font-family: var(--heading-font);
+            color: var(--color-primary);
+        }
+
+        .scrolled .header {
+            box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
+        }
+
+        .scrolled .header {
+            --background-color: rgba(255, 255, 255, 0.95);
+            --heading-color: #3c3c3c;
+            --nav-color: #3c3c3c;
+            --nav-hover-color: #3c3c3c;
+        }
+
+        @media (min-width: 1200px) {
+            .navmenu {
+                padding: 0;
+            }
+
+            .navmenu ul {
+                margin: 0;
+                padding: 0;
+                display: flex;
+                list-style: none;
+                align-items: center;
+            }
+
+            .navmenu li {
+                position: relative;
+            }
+
+            .navmenu>ul>li {
+                white-space: nowrap;
+                padding: 15px 14px;
+            }
+
+            .navmenu>ul>li:last-child {
+                padding-right: 0;
+            }
+
+            .navmenu a,
+            .navmenu a:focus {
+                color: var(--nav-color);
+                font-size: 14px;
+                padding: 0 2px;
+                font-family: var(--nav-font);
+                font-weight: 500;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                white-space: nowrap;
+                transition: 0.3s;
+                position: relative;
+                text-transform: uppercase;
+            }
+
+            .navmenu a i,
+            .navmenu a:focus i {
+                font-size: 12px;
+                line-height: 0;
+                margin-left: 5px;
+                transition: 0.3s;
+            }
+
+            .navmenu>ul>li>a:before {
+                content: "";
+                position: absolute;
+                height: 2px;
+                bottom: -6px;
+                left: 0;
+                background-color: var(--accent-color);
+                visibility: hidden;
+                width: 0px;
+                transition: all 0.3s ease-in-out 0s;
+            }
+
+            .navmenu a:hover:before,
+            .navmenu li:hover>a:before,
+            .navmenu .active:before {
+                visibility: visible;
+                width: 100%;
+            }
+
+            .navmenu li:hover>a,
+            .navmenu .active,
+            .navmenu .active:focus {
+                color: var(--nav-hover-color);
+            }
+
+            .navmenu .dropdown ul {
+                margin: 0;
+                padding: 10px 0;
+                background: var(--nav-dropdown-background-color);
+                display: block;
+                position: absolute;
+                visibility: hidden;
+                left: 14px;
+                top: 130%;
+                opacity: 0;
+                transition: 0.3s;
+                border-radius: 4px;
+                z-index: 99;
+                box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+            }
+
+            .navmenu .dropdown ul li {
+                min-width: 200px;
+            }
+
+            .navmenu .dropdown ul a {
+                padding: 10px 20px;
+                font-size: 15px;
+                text-transform: none;
+                font-weight: 400;
+                color: var(--nav-dropdown-color);
+            }
+
+            .navmenu .dropdown ul a i {
+                font-size: 12px;
+            }
+
+            .navmenu .dropdown ul a:hover,
+            .navmenu .dropdown ul .active:hover,
+            .navmenu .dropdown ul li:hover>a {
+                color: var(--nav-dropdown-hover-color);
+            }
+
+            .navmenu .dropdown:hover>ul {
+                opacity: 1;
+                top: 100%;
+                visibility: visible;
+            }
+
+            .navmenu .dropdown .dropdown ul {
+                top: 0;
+                left: -90%;
+                visibility: hidden;
+            }
+
+            .navmenu .dropdown .dropdown:hover>ul {
+                opacity: 1;
+                top: 0;
+                left: -100%;
+                visibility: visible;
+            }
+        }
+
+        /* Mobile Navigation */
+        @media (max-width: 1199px) {
+            .mobile-nav-toggle {
+                color: var(--nav-color);
+                font-size: 28px;
+                line-height: 0;
+                margin-right: 10px;
+                cursor: pointer;
+                transition: color 0.3s;
+            }
+
+            .navmenu {
+                padding: 0;
+                z-index: 9997;
+            }
+
+            .navmenu ul {
+                display: none;
+                list-style: none;
+                position: absolute;
+                inset: 60px 20px 20px 20px;
+                padding: 10px 0;
+                margin: 0;
+                border-radius: 6px;
+                background-color: var(--nav-mobile-background-color);
+                border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+                box-shadow: none;
+                overflow-y: auto;
+                transition: 0.3s;
+                z-index: 9998;
+            }
+
+            .navmenu a,
+            .navmenu a:focus {
+                color: var(--nav-dropdown-color);
+                padding: 10px 20px;
+                font-family: var(--nav-font);
+                font-size: 17px;
+                font-weight: 500;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                white-space: nowrap;
+                transition: 0.3s;
+            }
+
+            .navmenu a i,
+            .navmenu a:focus i {
+                font-size: 12px;
+                line-height: 0;
+                margin-left: 5px;
+                width: 30px;
+                height: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                transition: 0.3s;
+                background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+            }
+
+            .navmenu a i:hover,
+            .navmenu a:focus i:hover {
+                background-color: var(--accent-color);
+                color: var(--contrast-color);
+            }
+
+            .navmenu a:hover,
+            .navmenu .active,
+            .navmenu .active:focus {
+                color: var(--nav-dropdown-hover-color);
+            }
+
+            .navmenu .active i,
+            .navmenu .active:focus i {
+                background-color: var(--accent-color);
+                color: var(--contrast-color);
+                transform: rotate(180deg);
+            }
+
+            .navmenu .dropdown ul {
+                position: static;
+                display: none;
+                z-index: 99;
+                padding: 10px 0;
+                margin: 10px 20px;
+                background-color: var(--nav-dropdown-background-color);
+                transition: all 0.5s ease-in-out;
+            }
+
+            .navmenu .dropdown ul ul {
+                background-color: rgba(33, 37, 41, 0.1);
+            }
+
+            .navmenu .dropdown>.dropdown-active {
+                display: block;
+                background-color: rgba(33, 37, 41, 0.03);
+            }
+
+            .mobile-nav-active {
+                overflow: hidden;
+            }
+
+            .mobile-nav-active .mobile-nav-toggle {
+                color: #fff;
+                position: absolute;
+                font-size: 32px;
+                top: 15px;
+                right: 15px;
+                margin-right: 0;
+                z-index: 9999;
+            }
+
+            .mobile-nav-active .navmenu {
+                position: fixed;
+                overflow: hidden;
+                inset: 0;
+                background: rgba(33, 37, 41, 0.8);
+                transition: 0.3s;
+            }
+
+            .mobile-nav-active .navmenu>ul {
+                display: block;
+            }
+        }
+
+        .reg {
+            position: relative;
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .reg .container-form {
+            position: relative;
+            width: 800px;
+            height: 500px;
+            background: #fff;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .reg .container-form .user {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+        }
+
+        .reg .container-form .user .imgBx {
+            position: relative;
+            width: 50%;
+            height: 100%;
+
+            transition: 0.5s;
+        }
+
+        .reg .container-form .user .imgBx img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .reg .container-form .user .formBx {
+            position: relative;
+            width: 50%;
+            height: 100%;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            transition: 0.5s;
+        }
+
+        .reg .container-form .user .formBx form h2 {
+            font-size: 18px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+            width: 100%;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .reg .container-form .user .formBx form input {
+            position: relative;
+            width: 100%;
+            padding: 10px;
+            background: #f5f5f5;
+            color: #333;
+            border: none;
+            outline: none;
+            box-shadow: none;
+            margin: 8px 0;
+            font-size: 14px;
+            letter-spacing: 1px;
+            font-weight: 300;
+        }
+
+        .reg .container-form .user .formBx form input[type='submit'] {
+            max-width: 100px;
+            background: #feb900;
+            color: #fff;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            transition: 0.5s;
+        }
+
+        .reg .container-form .user .formBx form .signup {
+            position: relative;
+            margin-top: 20px;
+            font-size: 12px;
+            letter-spacing: 1px;
+            color: #555;
+            text-transform: uppercase;
+            font-weight: 300;
+        }
+
+        .reg .container-form .user .formBx form .signup a {
+            font-weight: 600;
+            text-decoration: none;
+            color: #feb900;
+        }
+
+        .reg .container-form .signupBx {
+            pointer-events: none;
+        }
+
+        .reg .container-form.active .signupBx {
+            pointer-events: initial;
+        }
+
+        .reg .container-form .signupBx .formBx {
+            left: 100%;
+        }
+
+        .reg .container-form.active .signupBx .formBx {
+            left: 0;
+        }
+
+        .reg .container-form .signupBx .imgBx {
+            left: -100%;
+        }
+
+        .reg .container-form.active .signupBx .imgBx {
+            left: 0%;
+        }
+
+        .reg .container-form .signinBx .formBx {
+            left: 0%;
+        }
+
+        .reg .container-form.active .signinBx .formBx {
+            left: 100%;
+        }
+
+        .reg .container-form .signinBx .imgBx {
+            left: 0%;
+        }
+
+        .reg .container-form.active .signinBx .imgBx {
+            left: -100%;
+        }
+
+        @media (max-width: 991px) {
+            .reg .container-form {
+                max-width: 400px;
+            }
+
+            .reg .container-form .imgBx {
+                display: none;
+            }
+
+            .reg .container-form .user .formBx {
+                width: 100%;
+            }
+        }
+
+        .footer {
+            color: var(--default-color);
+            background-color: var(--background-color);
+             
+            background-size: cover;
+            position: relative;
+            font-size: 14px;
+        }
+
+        .footer:before {
+            content: "";
+            background: color-mix(in srgb, var(--background-color), transparent 20%);
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .footer .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer .footer-top {
+            padding-top: 50px;
+        }
+
+        .footer .footer-about p {
+            font-size: 14px;
+            font-family: var(--heading-font);
+        }
+
+        .footer .social-links a:hover {
+            color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+
+        .footer h4 {
+            font-size: 16px;
+            font-weight: bold;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .footer .footer-links {
+            margin-bottom: 30px;
+        }
+
+        .footer .footer-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer .footer-links ul li {
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer .footer-links ul li:first-child {
+            padding-top: 0;
+        }
+
+        .footer .footer-links ul a {
+            color: color-mix(in srgb, var(--default-color), transparent 30%);
+            display: inline-block;
+            line-height: 1;
+        }
+
+        .footer .footer-links ul a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer .footer-contact p {
+            margin-bottom: 5px;
+        }
+
+        .footer .copyright {
+            padding-top: 25px;
+            padding-bottom: 25px;
+            border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+        }
+
+        .footer .copyright p {
+            margin-bottom: 0;
+        }
+
+        .footer .credits {
+            margin-top: 8px;
+            font-size: 13px;
+        }
+
+        .logo-img {
+            transform: scale(1.7);
+            transform-origin: left center;
+        }
+    </style>
+
+
+</head>
+
+<body>
+ <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href=" " class="logo d-flex align-items-center">
+        <img src="{% static 'images/image.png' %}" class="img-fluid logo-img">
+      </a>
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="{% url 'Home' %}"  >Home</a></li>
+            
+           
+          <li><a href="{% url 'registration_page' %}" >Register</a></li>
+          <li><a href="{% url 'login_page' %}"  class="active">Login</a></li>
+          <li><a href="">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+      {% if messages %}
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1100;">
+        {% for message in messages %}
+        <div class="toast align-items-center text-bg-{{ message.tags }} border-0 show" role="alert"
+            aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body">
+                    {{ message }}
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                    aria-label="Close"></button>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    <section class="reg mt-5">
+        <div class="container-form">
+            <div class="user signinBx">
+                <div class="imgBx"><img
+                        src="https://images.pexels.com/photos/9946110/pexels-photo-9946110.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                        alt="" /></div>
+                <div class="formBx">
+                    <form method="POST" action="{% url 'user_login' %}">
+                        {% csrf_token %}
+                        <h2>Login</h2>
+                        <input type="number" name="phone" placeholder="Phone Number" />
+                        <input type="password" name="password" placeholder="Password" />
+                        <input type="submit" />
+                        <p class="signup">
+                            Don't have an account ?
+                            <a href="{% url 'registration_page' %}">Sign Up.</a>
+                        </p>
+                        <p class="signup">Change Password ?
+                            <a href="{% url 'userforgotpage' %}">forgot </a>
+                        </p>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </section>
+<footer id="footer" class="footer   pt-5">
+        <div class="container footer-top">
+            <div class="row gy-4">
+                <div class="col-lg-3 col-md-6 footer-about">
+                    <a href="index.html" class="logo d-flex align-items-center">
+                        <span class="sitename">Elanadu Milk</span>
+                    </a>
+                    <div class="footer-contact pt-3">
+                        <p>Elanadu Milk Private Limited</p>
+                        <p>Vazhode, Elanadu P.O, Pazhayannur, Thrissur</p>
+                        <p>Pin: 680586</p>
+                        <p class="mt-3"><strong>Phone:</strong> <span>04884 287555</span></p>
+                        <p><strong>Mobile:</strong> <span>7306822404</span></p>
+                        <p><strong>Email:</strong> <span>elanadu@elanadu.com</span></p>
+                        <p><strong>Alt Email:</strong> <span>elanadu@elanadumilk.com</span></p>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-3 col-md-3 footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our History</a></li>
+                        <li><a href="#">Products</a></li>
+
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-3 footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our History</a></li>
+                        <li><a href="#">Products</a></li>
+
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-3 footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our History</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container copyright text-center mt-4">
+            <p>© <span>Copyright</span> <strong class="px-1">Elanadu Milk Private Limited</strong> <span>All Rights
+                    Reserved</span></p>
+        </div>
+    </footer>
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+    </a>
+
+
+    <div id="preloader"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs@1.5.0/dist/purecounter_vanilla.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+</body>
+
+<script>
+    (function () {
+        "use strict";
+
+        function toggleScrolled() {
+            const selectBody = document.querySelector('body');
+            const selectHeader = document.querySelector('#header');
+            if (!selectHeader.classList.contains('scroll-up-sticky') && !selectHeader.classList.contains('sticky-top') && !selectHeader.classList.contains('fixed-top')) return;
+            window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
+        }
+
+        document.addEventListener('scroll', toggleScrolled);
+        window.addEventListener('load', toggleScrolled);
+
+        const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
+
+        function mobileNavToogle() {
+            document.querySelector('body').classList.toggle('mobile-nav-active');
+            mobileNavToggleBtn.classList.toggle('bi-list');
+            mobileNavToggleBtn.classList.toggle('bi-x');
+        }
+        mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
+
+        document.querySelectorAll('#navmenu a').forEach(navmenu => {
+            navmenu.addEventListener('click', () => {
+                if (document.querySelector('.mobile-nav-active')) {
+                    mobileNavToogle();
+                }
+            });
+
+        });
+
+
+        document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
+            navmenu.addEventListener('click', function (e) {
+                e.preventDefault();
+                this.parentNode.classList.toggle('active');
+                this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
+                e.stopImmediatePropagation();
+            });
+        });
+
+        const preloader = document.querySelector('#preloader');
+        if (preloader) {
+            window.addEventListener('load', () => {
+                preloader.remove();
+            });
+        }
+
+        let scrollTop = document.querySelector('.scroll-top');
+
+        function toggleScrollTop() {
+            if (scrollTop) {
+                window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
+            }
+        }
+        scrollTop.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        window.addEventListener('load', toggleScrollTop);
+        document.addEventListener('scroll', toggleScrollTop);
+
+        function aosInit() {
+            AOS.init({
+                duration: 600,
+                easing: 'ease-in-out',
+                once: true,
+                mirror: false
+            });
+        }
+        window.addEventListener('load', aosInit);
+
+        const glightbox = GLightbox({
+            selector: '.glightbox'
+        });
+
+        document.querySelectorAll('.isotope-layout').forEach(function (isotopeItem) {
+            let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
+            let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
+            let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
+
+            let initIsotope;
+            imagesLoaded(isotopeItem.querySelector('.isotope-container'), function () {
+                initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
+                    itemSelector: '.isotope-item',
+                    layoutMode: layout,
+                    filter: filter,
+                    sortBy: sort
+                });
+            });
+
+            isotopeItem.querySelectorAll('.isotope-filters li').forEach(function (filters) {
+                filters.addEventListener('click', function () {
+                    isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
+                    this.classList.add('filter-active');
+                    initIsotope.arrange({
+                        filter: this.getAttribute('data-filter')
+                    });
+                    if (typeof aosInit === 'function') {
+                        aosInit();
+                    }
+                }, false);
+            });
+
+        });
+
+        function initSwiper() {
+            document.querySelectorAll(".init-swiper").forEach(function (swiperElement) {
+                let config = JSON.parse(
+                    swiperElement.querySelector(".swiper-config").innerHTML.trim()
+                );
+
+                if (swiperElement.classList.contains("swiper-tab")) {
+                    initSwiperWithCustomPagination(swiperElement, config);
+                } else {
+                    new Swiper(swiperElement, config);
+                }
+            });
+        }
+
+        window.addEventListener("load", initSwiper);
+
+        new PureCounter();
+
+    })();
+</script>
+
+</html>
